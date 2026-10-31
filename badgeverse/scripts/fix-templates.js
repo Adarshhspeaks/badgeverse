@@ -30,3 +30,4 @@ templates.forEach(t => {
 
 fs.writeFileSync(templatesPath, JSON.stringify(templates, null, 2), 'utf8');
 console.log('Fixed barcode types and header text!');
+
