@@ -442,3 +442,4 @@ filtered.unshift(f1Template);
 
 fs.writeFileSync(templatesPath, JSON.stringify(filtered, null, 2), 'utf8');
 console.log(`Successfully added F1 template! Total templates: ${filtered.length}`);
+
