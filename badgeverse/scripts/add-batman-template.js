@@ -442,3 +442,4 @@ filtered.splice(2, 0, batmanTemplate);
 
 fs.writeFileSync(templatesPath, JSON.stringify(filtered, null, 2), 'utf8');
 console.log(`Successfully added Batman template! Total templates: ${filtered.length}`);
+
