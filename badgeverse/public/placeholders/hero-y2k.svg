@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 340" width="540" height="340">
+  <defs>
+    <linearGradient id="y2kBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2e1065" />
+      <stop offset="45%" stop-color="#ff70a6" />
+      <stop offset="80%" stop-color="#70d6ff" />
+      <stop offset="100%" stop-color="#e2e8f0" />
+    </linearGradient>
+    <linearGradient id="chromeLiquid" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="45%" stop-color="#a6c0fe" />
+      <stop offset="50%" stop-color="#2a2a2a" />
+      <stop offset="55%" stop-color="#fbc2eb" />
+      <stop offset="100%" stop-color="#ffffff" />
+    </linearGradient>
+  </defs>
+  <rect width="540" height="340" fill="url(#y2kBg)" opacity="0.9" />
+  <!-- Sparkles & 4-Point Stars -->
+  <g fill="#ffffff" opacity="0.85">
+    <!-- Star 1 -->
+    <path d="M120 70 Q120 100 90 100 Q120 100 120 130 Q120 100 150 100 Q120 100 120 70 Z" />
+    <!-- Star 2 -->
+    <path d="M430 80 Q430 100 410 100 Q430 100 430 120 Q430 100 450 100 Q430 100 430 80 Z" transform="scale(0.8) translate(80, 20)" />
+    <!-- Star 3 -->
+    <path d="M220 220 Q220 235 205 235 Q220 235 220 250 Q220 235 235 235 Q220 235 220 220 Z" />
+    <!-- Star 4 -->
+    <path d="M460 210 Q460 230 440 230 Q460 230 460 250 Q460 230 480 230 Q460 230 460 210 Z" />
+  </g>
+  <!-- Cyber Butterfly Outline -->
+  <path d="M270 160 C240 100 160 110 190 170 C160 190 200 230 270 190 C340 230 380 190 350 170 C380 110 300 100 270 160 Z" fill="none" stroke="url(#chromeLiquid)" stroke-width="4" opacity="0.6" />
+  <!-- Label -->
+  <rect x="160" y="270" width="220" height="28" rx="14" fill="#2e1065" stroke="#70d6ff" stroke-width="2" />
+  <text x="270" y="288" fill="#70d6ff" font-family="'Space Mono', monospace" font-size="11" font-weight="bold" text-anchor="middle" letter-spacing="2">
+    ✧ REPLACE ME · Y2K HERO ✧
+  </text>
+</svg>
+

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 240">
+  <rect width="200" height="240" fill="#ee7b30"/>
+  <defs>
+    <pattern id="h" width="8" height="8" patternUnits="userSpaceOnUse">
+      <circle cx="4" cy="4" r="1.6" fill="#6f8fe8" opacity=".5"/>
+    </pattern>
+  </defs>
+  <rect width="200" height="240" fill="url(#h)"/>
+  <circle cx="100" cy="96" r="44" fill="#17141f" opacity=".8"/>
+  <path d="M20 240c0-62 36-84 80-84s80 22 80 84z" fill="#17141f" opacity=".8"/>
+  <text x="100" y="228" font-size="13" font-family="monospace" text-anchor="middle" fill="#fff">YOUR PHOTO</text>
+</svg>
+

@@ -1,0 +1,33 @@
+# Excluded folders
+badgeverse-pack/
+screenshots/
+reference/
+
+# Dependencies
+node_modules/
+badgeverse/node_modules/
+
+# Next.js build
+.next/
+badgeverse/.next/
+out/
+badgeverse/out/
+build/
+
+# Environment files
+.env*
+
+# Archives & logs
+*.zip
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+.DS_Store
+Thumbs.db
+
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
+badgeverse/next-env.d.ts
