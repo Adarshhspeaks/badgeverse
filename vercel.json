@@ -1,0 +1,7 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": "cd badgeverse && npm run build",
+  "outputDirectory": "badgeverse/.next",
+  "installCommand": "cd badgeverse && npm install",
+  "framework": "nextjs"
+}
