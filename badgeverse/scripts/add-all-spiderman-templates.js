@@ -774,3 +774,4 @@ if (spIdx !== -1) {
 
 fs.writeFileSync(templatesPath, JSON.stringify(list, null, 2), 'utf8');
 console.log(`Successfully added both additional Spider-Man templates! Total templates: ${list.length}`);
+
