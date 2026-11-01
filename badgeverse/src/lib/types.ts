@@ -97,6 +97,9 @@ export const FONTS = [
 
 export const CATEGORIES = [
   'All',
+  'F1',
+  'Spider-Man',
+  'Batman',
   'Creator',
   'Gamer',
   'VIP',

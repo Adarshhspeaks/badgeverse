@@ -1208,3 +1208,4 @@ if (f1Idx !== -1) {
 
 fs.writeFileSync(templatesPath, JSON.stringify(list, null, 2), 'utf8');
 console.log(`Successfully added all 3 new F1 templates! Total templates: ${list.length}`);
+

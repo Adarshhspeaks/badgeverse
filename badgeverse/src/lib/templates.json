@@ -2,7 +2,7 @@
   {
     "id": "f1",
     "name": "Formula 1 Grand Prix",
-    "cat": "VIP",
+    "cat": "F1",
     "tier": "Pro",
     "lay": "lic",
     "bg": "#060b14",
@@ -433,7 +433,7 @@
   {
     "id": "f1-ferrari",
     "name": "Scuderia Ferrari Corse",
-    "cat": "VIP",
+    "cat": "F1",
     "tier": "Pro",
     "lay": "lic",
     "bg": "#0a0b0e",
@@ -864,7 +864,7 @@
   {
     "id": "f1-champion-vert",
     "name": "Red Bull Apex Champion",
-    "cat": "VIP",
+    "cat": "F1",
     "tier": "Pro",
     "lay": "lan",
     "bg": "#061022",
@@ -1188,7 +1188,7 @@
   {
     "id": "f1-fire-trail",
     "name": "Formula 1 Speed Demon",
-    "cat": "VIP",
+    "cat": "F1",
     "tier": "Popular",
     "lay": "lic",
     "bg": "#090912",
@@ -1619,7 +1619,7 @@
   {
     "id": "spiderman",
     "name": "Spider-Man Web-Slinger",
-    "cat": "VIP",
+    "cat": "Spider-Man",
     "tier": "Popular",
     "lay": "lic",
     "bg": "#090c17",
@@ -2050,7 +2050,7 @@
   {
     "id": "spiderman-comic",
     "name": "Spider-Man Comic Splash",
-    "cat": "VIP",
+    "cat": "Spider-Man",
     "tier": "Popular",
     "lay": "lic",
     "bg": "#101422",
@@ -2481,7 +2481,7 @@
   {
     "id": "spiderman-duo",
     "name": "Spider-Verse Alliance",
-    "cat": "VIP",
+    "cat": "Spider-Man",
     "tier": "Pro",
     "lay": "lan",
     "bg": "#0b0f1e",
@@ -2803,7 +2803,7 @@
   {
     "id": "batman",
     "name": "The Dark Knight Dossier",
-    "cat": "VIP",
+    "cat": "Batman",
     "tier": "Pro",
     "lay": "lic",
     "bg": "#08090c",
