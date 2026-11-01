@@ -22,12 +22,6 @@ const steps = [
   'Download or share',
 ];
 
-const pricing = [
-  ['Standard PDF', '₹20/card', 'Front + Back card in high resolution with BadgeVerse watermark'],
-  ['Clean HD PDF', '₹30/card', 'Front + Back card, 100% watermark removed, print-ready'],
-  ['Pass / Bundle', '₹99', 'Unlimited downloads + all premium template access'],
-];
-
 const heroContainerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
@@ -231,32 +225,6 @@ export default function HomePage() {
               <motion.div key={i} className="tile" variants={tileVariants}>
                 <h3>Step {i + 1}</h3>
                 <p>{step}</p>
-              </motion.div>
-            ))}
-          </div>
-        </motion.section>
-
-        <motion.section
-          className="sec"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: '-10%' }}
-          variants={sectionVariants}
-        >
-          <h2>Pricing</h2>
-          <div className="grid">
-            {pricing.map(([name, price, desc]) => (
-              <motion.div key={name} className="tile price" variants={tileVariants}>
-                <h3>{name}</h3>
-                <b>{price}</b>
-                <p>{desc}</p>
-                <MotionLink
-                  className="btn sm"
-                  href="/templates"
-                  whileTap={{ scale: 0.96 }}
-                >
-                  Choose {name}
-                </MotionLink>
               </motion.div>
             ))}
           </div>
