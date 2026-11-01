@@ -119,53 +119,47 @@ export default function ExportPage() {
     const w = canvas.width;
     const h = canvas.height;
 
-    // 1. Repeating subtle diagonal watermark grid across the entire canvas
+    // Compact side watermark badge on bottom-right (not in the center)
+    const badgeW = Math.round(w * 0.40);
+    const badgeH = Math.round(h * 0.065);
+    const pad = Math.round(w * 0.025);
+    const x = w - badgeW - pad;
+    const y = h - badgeH - pad;
+    const radius = Math.round(w * 0.012);
+
     ctx.save();
-    ctx.rotate(-Math.PI / 6); // -30 degrees
-    ctx.font = `800 ${Math.round(w * 0.046)}px "Space Grotesk", Anton, -apple-system, sans-serif`;
-    ctx.fillStyle = 'rgba(23, 20, 31, 0.16)';
-    ctx.textAlign = 'center';
-    ctx.textBaseline = 'middle';
-
-    const stepX = w * 0.52;
-    const stepY = h * 0.22;
-    for (let y = -h * 1.5; y < h * 2.5; y += stepY) {
-      for (let x = -w * 1.5; x < w * 2.5; x += stepX) {
-        ctx.fillText('BADGEVERSE', x, y);
-      }
-    }
-    ctx.restore();
-
-    // 2. Bold central security diagonal banner
-    ctx.save();
-    ctx.translate(w / 2, h / 2);
-    ctx.rotate(-Math.PI / 7);
-
-    // Dark banner band
-    ctx.fillStyle = 'rgba(23, 20, 31, 0.88)';
-    ctx.fillRect(-w * 0.55, -h * 0.075, w * 1.1, h * 0.15);
-
-    // Accent line borders
-    ctx.strokeStyle = '#ffc933';
-    ctx.lineWidth = Math.max(3, Math.round(w * 0.007));
+    // Dark pill container
+    ctx.fillStyle = 'rgba(23, 20, 31, 0.94)';
     ctx.beginPath();
-    ctx.moveTo(-w * 0.55, -h * 0.075);
-    ctx.lineTo(w * 0.55, -h * 0.075);
-    ctx.moveTo(-w * 0.55, h * 0.075);
-    ctx.lineTo(w * 0.55, h * 0.075);
+    ctx.roundRect(x, y, badgeW, badgeH, radius);
+    ctx.fill();
+
+    // Retro yellow border
+    ctx.strokeStyle = '#ffc933';
+    ctx.lineWidth = Math.max(2, Math.round(w * 0.004));
     ctx.stroke();
 
-    // Primary banner text
-    ctx.font = `900 ${Math.round(w * 0.052)}px Anton, sans-serif`;
-    ctx.fillStyle = '#fffaf0';
-    ctx.textAlign = 'center';
-    ctx.textBaseline = 'middle';
-    ctx.fillText('BADGEVERSE • WATERMARKED', 0, -h * 0.016);
-
-    // Subtext
-    ctx.font = `700 ${Math.round(w * 0.022)}px "Space Mono", monospace`;
+    // Primary text: BADGEVERSE
+    ctx.font = `900 ${Math.round(badgeH * 0.52)}px Anton, sans-serif`;
     ctx.fillStyle = '#ffc933';
-    ctx.fillText('REMOVE WATERMARK FOR ₹30 • NOT OFFICIAL ID', 0, h * 0.03);
+    ctx.textAlign = 'left';
+    ctx.textBaseline = 'middle';
+    ctx.fillText('BADGEVERSE', x + Math.round(badgeW * 0.08), y + badgeH / 2);
+
+    // Separator line
+    const sepX = x + Math.round(badgeW * 0.50);
+    ctx.strokeStyle = 'rgba(255, 255, 255, 0.35)';
+    ctx.lineWidth = Math.max(1, Math.round(w * 0.002));
+    ctx.beginPath();
+    ctx.moveTo(sepX, y + badgeH * 0.2);
+    ctx.lineTo(sepX, y + badgeH * 0.8);
+    ctx.stroke();
+
+    // Subtext: WATERMARK (₹20)
+    ctx.font = `700 ${Math.round(badgeH * 0.32)}px "Space Mono", monospace`;
+    ctx.fillStyle = '#fffaf0';
+    ctx.textAlign = 'left';
+    ctx.fillText('WATERMARK (₹20)', sepX + Math.round(badgeW * 0.06), y + badgeH / 2);
 
     ctx.restore();
   };
@@ -406,40 +400,54 @@ export default function ExportPage() {
                 width={cardWidth}
                 height={cardHeight}
               />
-              {/* Visual Watermark Overlay */}
+              {/* Visual Watermark Overlay — Compact side badge */}
               {previewWatermark && (
                 <div
                   style={{
                     position: 'absolute',
-                    inset: 0,
+                    right: '10px',
+                    bottom: '10px',
+                    zIndex: 25,
                     pointerEvents: 'none',
                     display: 'flex',
                     alignItems: 'center',
-                    justifyContent: 'center',
-                    zIndex: 25,
-                    overflow: 'hidden',
+                    gap: '6px',
+                    background: 'rgba(23, 20, 31, 0.94)',
+                    color: '#fffaf0',
+                    border: '2px solid #ffc933',
+                    borderRadius: '6px',
+                    padding: '4px 10px',
+                    boxShadow: '0 3px 10px rgba(0,0,0,0.5)',
                   }}
                 >
-                  <div
+                  <span
                     style={{
-                      transform: 'rotate(-25deg)',
-                      background: 'rgba(23, 20, 31, 0.85)',
-                      color: '#fffaf0',
-                      padding: '10px 40px',
-                      borderTop: '3px solid #ffc933',
-                      borderBottom: '3px solid #ffc933',
-                      textAlign: 'center',
-                      boxShadow: '0 4px 14px rgba(0,0,0,0.4)',
-                      width: '120%',
+                      fontFamily: 'Anton, sans-serif',
+                      fontSize: '13px',
+                      color: '#ffc933',
+                      letterSpacing: '0.6px',
                     }}
                   >
-                    <div style={{ fontFamily: 'Anton, sans-serif', fontSize: '20px', letterSpacing: '1px' }}>
-                      BADGEVERSE • WATERMARKED
-                    </div>
-                    <div style={{ fontSize: '9px', fontWeight: 700, color: '#ffc933', marginTop: '2px', fontFamily: '"Space Mono", monospace' }}>
-                      REMOVE FOR ₹30 • NOT OFFICIAL ID
-                    </div>
-                  </div>
+                    BADGEVERSE
+                  </span>
+                  <span
+                    style={{
+                      width: '1px',
+                      height: '14px',
+                      background: 'rgba(255,255,255,0.3)',
+                    }}
+                  />
+                  <span
+                    style={{
+                      fontFamily: '"Space Mono", monospace',
+                      fontSize: '9px',
+                      fontWeight: 700,
+                      color: '#fffaf0',
+                      textTransform: 'uppercase',
+                    }}
+                  >
+                    WATERMARK (₹20)
+                  </span>
                 </div>
               )}
             </div>
@@ -458,40 +466,54 @@ export default function ExportPage() {
                 width={cardWidth}
                 height={cardHeight}
               />
-              {/* Visual Watermark Overlay */}
+              {/* Visual Watermark Overlay — Compact side badge */}
               {previewWatermark && (
                 <div
                   style={{
                     position: 'absolute',
-                    inset: 0,
+                    right: '10px',
+                    bottom: '10px',
+                    zIndex: 25,
                     pointerEvents: 'none',
                     display: 'flex',
                     alignItems: 'center',
-                    justifyContent: 'center',
-                    zIndex: 25,
-                    overflow: 'hidden',
+                    gap: '6px',
+                    background: 'rgba(23, 20, 31, 0.94)',
+                    color: '#fffaf0',
+                    border: '2px solid #ffc933',
+                    borderRadius: '6px',
+                    padding: '4px 10px',
+                    boxShadow: '0 3px 10px rgba(0,0,0,0.5)',
                   }}
                 >
-                  <div
+                  <span
                     style={{
-                      transform: 'rotate(-25deg)',
-                      background: 'rgba(23, 20, 31, 0.85)',
-                      color: '#fffaf0',
-                      padding: '10px 40px',
-                      borderTop: '3px solid #ffc933',
-                      borderBottom: '3px solid #ffc933',
-                      textAlign: 'center',
-                      boxShadow: '0 4px 14px rgba(0,0,0,0.4)',
-                      width: '120%',
+                      fontFamily: 'Anton, sans-serif',
+                      fontSize: '13px',
+                      color: '#ffc933',
+                      letterSpacing: '0.6px',
                     }}
                   >
-                    <div style={{ fontFamily: 'Anton, sans-serif', fontSize: '20px', letterSpacing: '1px' }}>
-                      BADGEVERSE • WATERMARKED
-                    </div>
-                    <div style={{ fontSize: '9px', fontWeight: 700, color: '#ffc933', marginTop: '2px', fontFamily: '"Space Mono", monospace' }}>
-                      REMOVE FOR ₹30 • NOT OFFICIAL ID
-                    </div>
-                  </div>
+                    BADGEVERSE
+                  </span>
+                  <span
+                    style={{
+                      width: '1px',
+                      height: '14px',
+                      background: 'rgba(255,255,255,0.3)',
+                    }}
+                  />
+                  <span
+                    style={{
+                      fontFamily: '"Space Mono", monospace',
+                      fontSize: '9px',
+                      fontWeight: 700,
+                      color: '#fffaf0',
+                      textTransform: 'uppercase',
+                    }}
+                  >
+                    WATERMARK (₹20)
+                  </span>
                 </div>
               )}
             </div>
