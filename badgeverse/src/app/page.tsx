@@ -12,7 +12,7 @@ const features = [
   ['Front and back', 'Design both sides, including an origin story.'],
   ['Keychain tags', 'Same artwork, tag shape with a hanging hole.'],
   ['Holo and halftone', 'Paper grain, halftone dots and a holographic sheen.'],
-  ['PNG, JPG, PDF', 'Export both sides at 3x resolution.'],
+  ['Save as PDF', 'Export both front & back in a single print-ready PDF.'],
 ];
 
 const steps = [
@@ -23,9 +23,9 @@ const steps = [
 ];
 
 const pricing = [
-  ['Free', '$0', 'Basic templates, PNG export with watermark'],
-  ['Pro', '$5/mo', 'All templates, no watermark, PDF export'],
-  ['Studio', '$15/mo', 'Team libraries and bulk generation'],
+  ['Standard PDF', '₹20/card', 'Front + Back card in high resolution with BadgeVerse watermark'],
+  ['Clean HD PDF', '₹30/card', 'Front + Back card, 100% watermark removed, print-ready'],
+  ['Pass / Bundle', '₹99', 'Unlimited downloads + all premium template access'],
 ];
 
 const heroContainerVariants: Variants = {

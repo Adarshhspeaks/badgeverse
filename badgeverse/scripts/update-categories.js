@@ -16,3 +16,4 @@ templates.forEach(t => {
 
 fs.writeFileSync(templatesPath, JSON.stringify(templates, null, 2), 'utf8');
 console.log('Updated categories for F1, Spider-Man, and Batman in templates.json!');
+
